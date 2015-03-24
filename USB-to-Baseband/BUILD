@@ -38,3 +38,9 @@ cc_binary(
     srcs = ["hosttest/convolutiontest.c"],
     deps = ["//USB-to-Baseband:convolution"]
 )
+
+cc_binary(
+    name = "streamtest",
+    srcs = ["hosttest/streamtest.c"],
+    deps = ["//USB-to-Baseband:baseband"]
+)
