@@ -27,6 +27,10 @@ cc_library(
         "include/symbol.h",
     ],
     includes = ["./include/"],
+    deps = [
+        "//USB-to-Baseband:convolution",
+        "//USB-to-Baseband:util",
+    ]
 )
 
 cc_binary(
