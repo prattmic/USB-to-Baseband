@@ -9,3 +9,10 @@
 *cscope*
 tags
 hosttest/streamtest
+
+/bazel-bin
+/bazel-genfiles
+/bazel-out
+/bazel-bazel
+/bazel-testlogs
+/bazel-USB-to-Baseband
