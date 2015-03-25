@@ -1,0 +1,95 @@
+major_version: "local"
+minor_version: ""
+default_target_cpu: "same_as_host"
+default_toolchain {
+  cpu: "armv7m"
+  toolchain_identifier: "arm-none-eabi"
+}
+default_toolchain {
+  cpu: "k8"
+  toolchain_identifier: "local_linux"
+}
+
+toolchain {
+  abi_version: "local"
+  abi_libc_version: "local"
+  builtin_sysroot: ""
+  compiler: "compiler"
+  host_system_name: "local"
+  needsPic: true
+  supports_gold_linker: false
+  supports_incremental_linker: false
+  supports_fission: false
+  supports_interface_shared_objects: false
+  supports_normalizing_ar: false
+  supports_start_end_lib: false
+  supports_thin_archives: false
+  target_libc: "local"
+  target_cpu: "local"
+  target_system_name: "local"
+  toolchain_identifier: "arm-none-eabi"
+
+  tool_path { name: "ar" path: "/usr/local/bin/arm-none-eabi-ar" }
+  tool_path { name: "compat-ld" path: "/usr/local/bin/arm-none-eabi-ld" }
+  tool_path { name: "cpp" path: "/usr/local/bin/arm-none-eabi-cpp" }
+  tool_path { name: "dwp" path: "/usr/local/bin/arm-none-eabi-dwp" }
+  tool_path { name: "gcc" path: "/usr/local/bin/arm-none-eabi-gcc" }
+  cxx_flag: "-std=c++0x"
+  # TODO(bazel-team): In theory, the path here ought to exactly match the path
+  # used by gcc. That works because bazel currently doesn't track files at
+  # absolute locations and has no remote execution, yet. However, this will need
+  # to be fixed, maybe with auto-detection?
+  cxx_builtin_include_directory: "/usr/local/lib/gcc/"
+  cxx_builtin_include_directory: "/usr/local/arm-none-eabi/include/"
+  tool_path { name: "gcov" path: "/usr/local/bin/arm-none-eabi-gcov" }
+  tool_path { name: "ld" path: "/usr/local/bin/arm-none-eabi-ld" }
+  tool_path { name: "nm" path: "/usr/local/bin/arm-none-eabi-nm" }
+  tool_path { name: "objcopy" path: "/usr/local/bin/arm-none-eabi-objcopy" }
+  objcopy_embed_flag: "-I"
+  objcopy_embed_flag: "binary"
+  tool_path { name: "objdump" path: "/usr/local/bin/arm-none-eabi-objdump" }
+  tool_path { name: "strip" path: "/usr/local/bin/arm-none-eabi-strip" }
+}
+
+toolchain {
+  abi_version: "local"
+  abi_libc_version: "local"
+  builtin_sysroot: ""
+  compiler: "compiler"
+  host_system_name: "local"
+  needsPic: true
+  supports_gold_linker: false
+  supports_incremental_linker: false
+  supports_fission: false
+  supports_interface_shared_objects: false
+  supports_normalizing_ar: false
+  supports_start_end_lib: false
+  supports_thin_archives: false
+  target_libc: "local"
+  target_cpu: "local"
+  target_system_name: "local"
+  toolchain_identifier: "local_linux"
+
+  tool_path { name: "ar" path: "/usr/bin/ar" }
+  tool_path { name: "compat-ld" path: "/usr/bin/ld" }
+  tool_path { name: "cpp" path: "/usr/bin/cpp" }
+  tool_path { name: "dwp" path: "/usr/bin/dwp" }
+  tool_path { name: "gcc" path: "/usr/bin/gcc" }
+  cxx_flag: "-std=c++0x"
+  linker_flag: "-lstdc++"
+  # TODO(bazel-team): In theory, the path here ought to exactly match the path
+  # used by gcc. That works because bazel currently doesn't track files at
+  # absolute locations and has no remote execution, yet. However, this will need
+  # to be fixed, maybe with auto-detection?
+  cxx_builtin_include_directory: "/usr/lib/gcc/"
+  cxx_builtin_include_directory: "/usr/local/include"
+  cxx_builtin_include_directory: "/usr/include"
+  tool_path { name: "gcov" path: "/usr/bin/gcov" }
+  tool_path { name: "ld" path: "/usr/bin/ld" }
+  tool_path { name: "nm" path: "/usr/bin/nm" }
+  tool_path { name: "objcopy" path: "/usr/bin/objcopy" }
+  objcopy_embed_flag: "-I"
+  objcopy_embed_flag: "binary"
+  tool_path { name: "objdump" path: "/usr/bin/objdump" }
+  tool_path { name: "strip" path: "/usr/bin/strip" }
+}
